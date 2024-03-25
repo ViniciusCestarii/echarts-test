@@ -1,4 +1,6 @@
+import BeefEchart from "@/components/charts/BeefEchart";
 import BeijingAqiEchart from "@/components/charts/BeijingAqiEchart";
+import BrazilMapEchart from "@/components/charts/BrazilMapEchart";
 import FirstEchart from "@/components/charts/FirstEchart";
 import MultipleLineEchart from "@/components/charts/MultipleLineEchart";
 import MultipleLineEchartWithPie from "@/components/charts/MultipleLineEchartWithPie";
@@ -12,6 +14,9 @@ export default function Home() {
       <SvgEchart />
       <MultipleLineEchart />
       <MultipleLineEchartWithPie/>
+      <BeefEchart />
+      <BrazilMapEchart isMap />
+      <BrazilMapEchart />
     </main>
   );
 }

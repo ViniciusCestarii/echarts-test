@@ -1,4 +1,4 @@
-# Exploring the Power of ECharts
+# Exploring the Power of ECharts: echarts-test
 
 Welcome to my GitHub project dedicated to exploring and harnessing the power of ECharts! This repository aims to provide you with the basics you need to know to make the most out of this incredible visualization library.
 

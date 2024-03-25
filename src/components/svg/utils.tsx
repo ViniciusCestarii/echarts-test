@@ -13,8 +13,6 @@ function exportSvgWithImage(svgString: string) {
   // Set the inner HTML of the new SVG element to the inner HTML of the parsed SVG
   svgElement.innerHTML = svgInnerHtml;
 
-  console.log(svgElement);
-
   return svgElement;
 }
 export default exportSvgWithImage;

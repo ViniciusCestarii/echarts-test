@@ -4,6 +4,8 @@ import * as echarts from 'echarts';
 
 const MultipleLineWithPieEchart = () => {
   const chartRef = useRef(null);
+  const prevXAxisValue = useRef(-1);
+  const chartHasRendered = useRef(false);
 
   useEffect(() => {
     let myChart = echarts.init(chartRef.current, 'dark');
@@ -14,7 +16,7 @@ const MultipleLineWithPieEchart = () => {
         trigger: 'axis',
         showContent: false
       },
-    dataset : {
+      dataset: {
         source: [
           ['Trabalhando', '2023 Março', '2023 Abril', '2023 Maio', '2023 Junho', '2023 Julho', '2023 Agosto', '2023 Setembro', '2023 Outubro', '2023 Novembro', '2023 Dezembro', '2024 Janeiro', '2024 Fevereiro', '2024 Março'],
           ['Tech Innovations Inc.', 80, 87, 95, 78, 82, 88, 91, 95, 89, 84, 89, 93, 87],
@@ -30,7 +32,21 @@ const MultipleLineWithPieEchart = () => {
       },
       xAxis: { type: 'category', triggerEvent: true },
       yAxis: { gridIndex: 0 },
-      grid: { top: '55%'},
+      grid: { top: '55%' },
+      graphic: [
+        {
+          id: 'dateText',
+          type: 'text',
+          right: 20,
+          top: 20,
+          style: {
+            text: '2024 Março',
+            textAlign: 'right',
+            fill: '#fff',
+            fontSize: 14
+          }
+        }
+      ],
       series: [
         { type: 'line', smooth: true, seriesLayoutBy: 'row', emphasis: { focus: 'series' } },
         { type: 'line', smooth: true, seriesLayoutBy: 'row', emphasis: { focus: 'series' } },
@@ -52,18 +68,36 @@ const MultipleLineWithPieEchart = () => {
 
     myChart.setOption(option);
 
-    myChart.on('mouseover', (event) => {
-      console.log(event);
-      const dimension = event.dataIndex;
-      if (dimension) {
-        console.log(dimension);
-        myChart.setOption({
-          series: {
-            id: 'pie',
-            label: { formatter: '{b}: {@[' + dimension + ']} ({d}%)' },
-            encode: { value: dimension, tooltip: dimension }
-          }
-        });
+    myChart.on('finished', () => {
+      chartHasRendered.current = true;
+    })
+
+    myChart.on('updateAxisPointer', (event: any) => {
+      if (!chartHasRendered.current) {
+        return
+      }
+
+      const xAxisInfo = event.axesInfo[0];
+      if (xAxisInfo) {
+        const currentXAxisValue = xAxisInfo.value;
+        if (currentXAxisValue !== prevXAxisValue.current) {
+          const dimension = currentXAxisValue + 1;
+          myChart.setOption({
+            series: {
+              id: 'pie',
+              label: { formatter: '{b}: {@[' + dimension + ']} ({d}%)' },
+              encode: { value: dimension, tooltip: dimension }
+            },
+            graphic: [{
+              id: 'dateText',
+              type: 'text',
+              style: {
+                text: option.dataset.source[0][dimension],
+              }
+            }]
+          });
+          prevXAxisValue.current = currentXAxisValue;
+        }
       }
     });
 

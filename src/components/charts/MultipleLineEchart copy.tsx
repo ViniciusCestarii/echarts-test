@@ -37,11 +37,11 @@ const MultipleLineWithPieEchart = () => {
         {
           id: 'dateText',
           type: 'text',
-          right: 20,
-          top: 20,
+          right: "center",
+          top: "23.5%",
           style: {
             text: '2024 Março',
-            textAlign: 'right',
+            textAlign: 'center',
             fill: '#fff',
             fontSize: 14
           }
@@ -57,7 +57,7 @@ const MultipleLineWithPieEchart = () => {
         {
           type: 'pie',
           id: 'pie',
-          radius: '30%',
+          radius: ['18%', '30%'],
           center: ['50%', '25%'],
           emphasis: { focus: 'self' },
           label: { formatter: '{b}: {@2024 Março} ({d}%)' },

@@ -1,8 +1,7 @@
 import BeijingAqiEchart from "@/components/charts/BeijingAqiEchart";
 import FirstEchart from "@/components/charts/FirstEchart";
 import MultipleLineEchart from "@/components/charts/MultipleLineEchart";
-import MultipleLineEchartWithPie from "@/components/charts/MultipleLineEchart copy";
-import MultipleLineWithPieEchart from "@/components/charts/MultipleLineWithPieEchart";
+import MultipleLineEchartWithPie from "@/components/charts/MultipleLineEchartWithPie";
 import SvgEchart from "@/components/charts/SvgEchart";
 
 export default function Home() {

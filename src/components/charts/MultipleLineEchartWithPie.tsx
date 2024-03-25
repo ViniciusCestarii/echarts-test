@@ -12,6 +12,9 @@ const MultipleLineWithPieEchart = () => {
 
     const option = {
       legend: {},
+      aria: {
+        show: true // ECharts will automatically generate a description of the chart according to the title, chart, data, etc. 
+      },    
       tooltip: {
         trigger: 'axis',
         showContent: false

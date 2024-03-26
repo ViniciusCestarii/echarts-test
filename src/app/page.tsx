@@ -13,6 +13,7 @@ export default function Home() {
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-4">
       <AnimatedSantaCatarinaMapEchartUsingJson />
+      <span>Obs: Estes dados são aproximações e, portanto, passíveis de imprecisão.</span>
       <FirstEchart />
       <BeijingAqiEchart />
       <SvgEchart />

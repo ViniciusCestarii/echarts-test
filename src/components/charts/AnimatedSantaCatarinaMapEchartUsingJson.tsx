@@ -314,7 +314,7 @@ const mapOption = {
     formatter: '{b}: {c} mil'
   },
   title: {
-    text: 'População Brasileria 2024 (mil)',
+    text: 'População Catarinense 2020 (mil)',
     left: '1%'
   },
   visualMap: {
@@ -361,7 +361,7 @@ const barOption = {
     formatter: '{b}: {c} mil'
   },
   title: {
-    text: 'População Brasileria 2024 (mil)',
+    text: 'População Catarinense 2020 (mil)',
     left: '1%'
   },
   yAxis: {

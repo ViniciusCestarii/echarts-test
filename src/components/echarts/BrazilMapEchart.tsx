@@ -88,7 +88,6 @@ const BrazilMapEchart = ({isMap}: BrazilMapEchartProps) => {
           selectedMode: false,
           data: data,
           animationDurationUpdate: 1000,
-          universalTransition: true,
         }
       ]
     };
@@ -132,7 +131,6 @@ const BrazilMapEchart = ({isMap}: BrazilMapEchartProps) => {
         data: data.map(function (item) {
           return item.value;
         }),
-        universalTransition: true,
       }
     };
     let currentOption: any = isMap ? mapOption : barOption;

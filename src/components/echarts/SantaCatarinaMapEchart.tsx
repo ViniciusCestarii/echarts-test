@@ -350,7 +350,6 @@ const mapOption = {
       },
       selectedMode: false,
       data: data,
-      universalTransition: true,
     }
   
 };
@@ -399,7 +398,6 @@ const barOption = {
     data: data.map(function (item) {
       return item.value;
     }),
-    universalTransition: true,
   }
 };
 
@@ -427,7 +425,7 @@ const AnimatedSantaCatarinaMapEchart = () => {
   }, [isMap])
 
   return (<>
-    <button onClick={() => setIsMap(!isMap)} className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Toggle Map</button>
+    <button onClick={() => setIsMap(!isMap)} className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">mudar tipo de gráfico</button>
 
   <div ref={chartRef} style={{ height: '600px', width: '100%' }} /></>)
 };

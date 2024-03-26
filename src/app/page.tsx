@@ -19,7 +19,9 @@ export default function Home() {
       <Link href="https://echarts.apache.org/en/index.html" className="absolute top-10 left-4 -rotate-12" target="_blank">
         <Image src="/echarts-logo.png" alt="Echarts logo" width={646} height={147} />
       </Link>
-      <Link href="https://github.com/ViniciusCestarii" className="underline w-full text-right">@viniciuscestarii</Link>
+      <div className="underline w-full flex justify-end">
+        <Link href="https://github.com/ViniciusCestarii">@viniciuscestarii</Link>
+      </div>
       <AnimatedSantaCatarinaMapEchartUsingJson />
       <span>Obs: Estes dados são aproximações e, portanto, passíveis de imprecisão.</span>
       <FirstEchart />
@@ -27,7 +29,7 @@ export default function Home() {
       <SvgEchart />
       <MultipleLineEchart />
       <MultipleLineEchartWithPie />
-      <h2>Svg maps</h2>
+      <h2>Mapas utilizando SVG</h2>
       <BeefEchart />
       <AnimatedBrazilMapEchart />
       <BrazilMapEchart isMap />

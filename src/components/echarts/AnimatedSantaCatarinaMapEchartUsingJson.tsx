@@ -352,8 +352,17 @@ const mapOption = {
     selectedMode: false,
     data: data,
     universalTransition: true,
-  }
-
+  },
+  toolbox: {
+    show: true,
+    left: 'right',
+    top: 'top',
+    feature: {
+      dataView: { readOnly: true },
+      restore: {},
+      saveAsImage: {}
+    }
+  },
 };
 
 const barOption = {
@@ -409,6 +418,16 @@ const barOption = {
       type: 'inside'
     }
   ],
+  toolbox: {
+    show: true,
+    left: 'right',
+    top: 'top',
+    feature: {
+      dataView: { readOnly: true },
+      restore: {},
+      saveAsImage: {}
+    }
+  },
 };
 
 const AnimatedSantaCatarinaMapEchartUsingJson = () => {

@@ -2,6 +2,8 @@
 
 Welcome to my GitHub project dedicated to exploring and harnessing the power of ECharts! This repository aims to provide you with the basics you need to know to make the most out of this incredible visualization library.
 
+[See charts ↗](https://echarts-test-viniciuscestarii.vercel.app/)
+
 ## Introduction to ECharts:
 ECharts is an open-source JavaScript visualization library developed by Baidu. It provides a wide range of interactive charts and graphs that can be easily integrated into web applications. From simple line charts to complex geographical maps, ECharts offers a versatile solution for all data visualization needs.
 

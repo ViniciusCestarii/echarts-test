@@ -1,7 +1,7 @@
 "use client"
 import React, { useEffect, useRef, useState } from 'react';
 import * as echarts from 'echarts';
-import exportSvgWithImage, {brazilSvgString} from '../svg/utils';
+import exportSvgImage, {brazilSvgString} from '../svg/utils';
  
 const data = [
   { "name": "Acre", "value": 0.91 },
@@ -48,8 +48,8 @@ const mapOption = {
   visualMap: {
     right: '10%',
     top: '15%',
-    min: 0,
-    max: 50,
+    min: data[data.length -1].value,
+    max: data[0].value,
     orient: 'vertical',
     text: ['', 'População em milhões'],
     realtime: true,
@@ -95,8 +95,8 @@ const barOption = {
   visualMap: {
     right: '10%',
     top: '15%',
-    min: 0,
-    max: 50,
+    min: data[data.length -1].value,
+    max: data[0].value,
     orient: 'vertical',
     text: ['', 'População em milhões'],
     realtime: true,
@@ -133,7 +133,7 @@ const AnimatedBrazilMapEchart = () => {
   const [isMap, setIsMap] = useState(true)
 
   useEffect(() => {
-    echarts.registerMap('Brazil_map', { svg: exportSvgWithImage(brazilSvgString) });
+    echarts.registerMap('Brazil_map', { svg: exportSvgImage(brazilSvgString) });
     let myChart = echarts.init(chartRef.current, 'dark');
 
     echartRef.current = myChart;

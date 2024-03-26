@@ -1,13 +1,13 @@
 "use client"
 import React, { useEffect, useRef } from 'react';
 import * as echarts from 'echarts';
-import exportSvgWithImage, {beefSvgString} from '../svg/utils';
+import exportSvgImage, {beefSvgString} from '../svg/utils';
  
 const BeefEchart = () => {
   const chartRef = useRef(null);
 
   useEffect(() => {
-    echarts.registerMap('Beef_cuts_France', { svg: exportSvgWithImage(beefSvgString) });
+    echarts.registerMap('Beef_cuts_France', { svg: exportSvgImage(beefSvgString) });
     let myChart = echarts.init(chartRef.current, 'dark');
     const option = {
       tooltip: {},

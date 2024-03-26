@@ -1,7 +1,7 @@
 "use client"
 import React, { useEffect, useRef } from 'react';
 import * as echarts from 'echarts';
-import exportSvgWithImage, {brazilSvgString} from '../svg/utils';
+import exportSvgImage, {brazilSvgString} from '../svg/utils';
  
 const data = [
   { "name": "Acre", "value": 0.91 },
@@ -44,7 +44,7 @@ interface BrazilMapEchartProps {
 const BrazilMapEchart = ({isMap}: BrazilMapEchartProps) => {
   const chartRef = useRef(null);
   useEffect(() => {
-    echarts.registerMap('Brazil_map', { svg: exportSvgWithImage(brazilSvgString) });
+    echarts.registerMap('Brazil_map', { svg: exportSvgImage(brazilSvgString) });
     let myChart = echarts.init(chartRef.current, 'dark');
     const mapOption = {
       tooltip: {
@@ -57,8 +57,8 @@ const BrazilMapEchart = ({isMap}: BrazilMapEchartProps) => {
       visualMap: {
         right: '10%',
         top: '15%',
-        min: 0,
-        max: 50,
+        min: data[data.length -1].value,
+        max: data[0].value,
         orient: 'vertical',
         text: ['', 'População em milhões'],
         realtime: true,
@@ -104,8 +104,8 @@ const BrazilMapEchart = ({isMap}: BrazilMapEchartProps) => {
       visualMap: {
         right: '10%',
         top: '15%',
-        min: 0,
-        max: 50,
+        min: data[data.length -1].value,
+        max: data[0].value,
         orient: 'vertical',
         text: ['', 'População em milhões'],
         realtime: true,
@@ -128,7 +128,6 @@ const BrazilMapEchart = ({isMap}: BrazilMapEchartProps) => {
       },
       animationDurationUpdate: 1000,
       series: {
-        id: 'population',
         type: 'bar',
         data: data.map(function (item) {
           return item.value;

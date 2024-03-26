@@ -5,8 +5,8 @@ import BrazilMapEchart from "@/components/charts/BrazilMapEchart";
 import FirstEchart from "@/components/charts/FirstEchart";
 import MultipleLineEchart from "@/components/charts/MultipleLineEchart";
 import MultipleLineEchartWithPie from "@/components/charts/MultipleLineEchartWithPie";
+import SantaCatarinaMapEchart from "@/components/charts/SantaCatarinaMapEchart";
 import SvgEchart from "@/components/charts/SvgEchart";
-import { useState } from "react";
 
 export default function Home() {
   return (
@@ -20,6 +20,7 @@ export default function Home() {
       <AnimatedBrazilMapEchart />
       <BrazilMapEchart isMap />
       <BrazilMapEchart />
+      <SantaCatarinaMapEchart />
     </main>
   );
 }

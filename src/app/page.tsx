@@ -1,4 +1,5 @@
 import AnimatedBrazilMapEchart from "@/components/charts/AnimatedBrazilMapEchart";
+import AnimatedSantaCatarinaMapEchartUsingJson from "@/components/charts/AnimatedSantaCatarinaMapEchartUsingJson";
 import BeefEchart from "@/components/charts/BeefEchart";
 import BeijingAqiEchart from "@/components/charts/BeijingAqiEchart";
 import BrazilMapEchart from "@/components/charts/BrazilMapEchart";
@@ -11,6 +12,7 @@ import SvgEchart from "@/components/charts/SvgEchart";
 export default function Home() {
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-4">
+      <AnimatedSantaCatarinaMapEchartUsingJson />
       <FirstEchart />
       <BeijingAqiEchart />
       <SvgEchart />

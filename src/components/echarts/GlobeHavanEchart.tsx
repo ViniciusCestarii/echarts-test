@@ -29,7 +29,7 @@ const mapOption = {
     viewControl: {
       autoRotate: false,
     },
-    displacementScale: 0.01,
+    displacementScale: 0.03,
   },
   series: [
     {

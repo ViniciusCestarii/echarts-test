@@ -96,7 +96,7 @@ const unstyledOption = {
   },
 }
 
-const initialIsStyled = true;
+const initialIsStyled = false;
 
 const GlobeHavanMap = () => {
   const chartRef = useRef(null);

@@ -7,6 +7,7 @@ import BrazilMapEchart from "@/components/echarts/BrazilMapEchart";
 import FirstEchart from "@/components/echarts/FirstEchart";
 import MultipleLineEchart from "@/components/echarts/MultipleLineEchart";
 import MultipleLineEchartWithPie from "@/components/echarts/MultipleLineEchartWithPie";
+import SantaCatarinaHavanMap from "@/components/echarts/SantaCatarinaHavanMap";
 import SantaCatarinaMapEchart from "@/components/echarts/SantaCatarinaMapEchart";
 import SvgEchart from "@/components/echarts/SvgEchart";
 import Image from "next/image";
@@ -22,8 +23,9 @@ export default function Home() {
       <div className="underline w-full flex justify-end">
         <Link href="https://github.com/ViniciusCestarii">@viniciuscestarii</Link>
       </div>
-      <AnimatedSantaCatarinaMapEchartUsingJson />
       <span>Obs: Estes dados são aproximações e, portanto, passíveis de imprecisão.</span>
+      <AnimatedSantaCatarinaMapEchartUsingJson />
+      <SantaCatarinaHavanMap />
       <FirstEchart />
       <BeijingAqiEchart />
       <SvgEchart />

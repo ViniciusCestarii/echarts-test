@@ -359,7 +359,7 @@ const barOption = {
     formatter: '{b}: {c} mil'
   },
   title: {
-    text: 'População Brasileria 2024 (mil)',
+    text: 'População Catarinense 2024 (mil)',
     left: '1%'
   },
   dataZoom: [

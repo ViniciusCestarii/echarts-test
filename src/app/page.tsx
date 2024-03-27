@@ -3,6 +3,7 @@ import AnimatedSantaCatarinaMapEchartUsingJson from "@/components/echarts/Animat
 import AnimatedTextEcharts from "@/components/echarts/AnimatedTextEcharts";
 import BeefEchart from "@/components/echarts/BeefEchart";
 import BeijingAqiEchart from "@/components/echarts/BeijingAqiEchart";
+import BrazilHavanMap from "@/components/echarts/BrazilHavanGeoEchart";
 import BrazilMapEchart from "@/components/echarts/BrazilMapEchart";
 import FirstEchart from "@/components/echarts/FirstEchart";
 import MultipleLineEchart from "@/components/echarts/MultipleLineEchart";
@@ -25,6 +26,7 @@ export default function Home() {
       </div>
       <span>Obs: Estes dados são aproximações e, portanto, passíveis de imprecisão.</span>
       <AnimatedSantaCatarinaMapEchartUsingJson />
+      <BrazilHavanMap />
       <SantaCatarinaHavanMap />
       <FirstEchart />
       <BeijingAqiEchart />

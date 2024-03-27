@@ -7,6 +7,7 @@ import BrazilHavanMap from "@/components/echarts/BrazilHavanGeoEchart";
 import BrazilMapEchart from "@/components/echarts/BrazilMapEchart";
 import FirstEchart from "@/components/echarts/FirstEchart";
 import GlobeHavanMap from "@/components/echarts/GlobeHavanEchart";
+import GlobeHavanWithBar from "@/components/echarts/GlobeHavanEchartWithBar";
 import MultipleLineEchart from "@/components/echarts/MultipleLineEchart";
 import MultipleLineEchartWithPie from "@/components/echarts/MultipleLineEchartWithPie";
 import SantaCatarinaHavanMap from "@/components/echarts/SantaCatarinaHavanMap";
@@ -29,6 +30,7 @@ export default function Home() {
       <AnimatedSantaCatarinaMapEchartUsingJson />
       <BrazilHavanMap />
       <GlobeHavanMap />
+      <GlobeHavanWithBar />
       <SantaCatarinaHavanMap />
       <FirstEchart />
       <BeijingAqiEchart />

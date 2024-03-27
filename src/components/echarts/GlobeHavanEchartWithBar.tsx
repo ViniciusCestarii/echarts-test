@@ -33,9 +33,11 @@ const mapOption = {
   },
   series: [
     {
-      type: 'scatter3D',
+      type: 'bar3D',
       coordinateSystem: 'globe',
       blendMode: 'lighter',
+      barSize: 0.6,
+      minHeight: 0.2,
       emphasis: {
         label: {
           show: false
@@ -53,7 +55,6 @@ const styledOption = {
   ...mapOption,
   globe: {
     ...mapOption.globe,
-    globeOuterRadius: 100,
     baseColor: 'blue',
     shading: 'realistic',
     realisticMaterial: {
@@ -98,7 +99,7 @@ const unstyledOption = {
 
 const initialIsStyled = true;
 
-const GlobeHavanMap = () => {
+const GlobeHavanWithBar = () => {
   const chartRef = useRef(null);
   const echartRef = useRef<echarts.ECharts | null>(null);
   const [isStyled, setIsStyled] = useState(initialIsStyled);
@@ -111,8 +112,10 @@ const GlobeHavanMap = () => {
 
       const newOption = { ...(initialIsStyled ? styledOption : unstyledOption) } as any
       newOption.series[0].data = filiais.map((filial) => {
-        return [filial.longitude, filial.latitude, 0, filial.nomeFilial, filial.horarioTrabalho, filial.numero];
+        return [filial.longitude, filial.latitude, Math.random(), filial.nomeFilial, filial.horarioTrabalho, filial.numero];
       });
+
+      newOption.series[0].data.push([-48.90583372402481, -27.099354236831417, 10, "Havan - Centro Administrativo",])
 
       echartRef.current?.setOption(newOption, true);
       echartRef.current?.hideLoading();
@@ -143,4 +146,4 @@ const GlobeHavanMap = () => {
     <div ref={chartRef} style={{ height: '600px', width: '100%' }} /></>)
 };
 
-export default GlobeHavanMap;
+export default GlobeHavanWithBar;

@@ -24,7 +24,7 @@ export default function Home() {
         <Image src="/echarts-logo.png" alt="Echarts logo" width={646} height={147} />
       </Link>
       <div className="underline w-full flex justify-end">
-        <Link href="https://github.com/ViniciusCestarii">@viniciuscestarii</Link>
+        <Link href="https://github.com/ViniciusCestarii/echarts-test">@viniciuscestarii</Link>
       </div>
       <span>Obs: Estes dados são aproximações e, portanto, passíveis de imprecisão.</span>
       <AnimatedSantaCatarinaMapEchartUsingJson />

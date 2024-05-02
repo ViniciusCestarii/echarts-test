@@ -2,6 +2,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import * as echarts from 'echarts';
 import 'echarts-gl';
+import { fetchHavanBranches } from '@/utils/fetch';
 
 interface HavanFilial {
   idFilial: string
@@ -106,9 +107,7 @@ const GlobeHavanWithBar = () => {
 
   useEffect(() => {
     const fetchFiliais = async () => {
-      const response = await fetch('https://apigatewaywebapi.havan.com.br/dadosmestre/api/Filial/BuscarFiliaisProximas?pagina=1&itensPorPagina=1000');
-      const data = await response.json();
-      const filiais = data.result.itens as HavanFilial[];
+      const filiais = await fetchHavanBranches();
 
       const newOption = { ...(initialIsStyled ? styledOption : unstyledOption) } as any
       newOption.series[0].data = filiais.map((filial) => {

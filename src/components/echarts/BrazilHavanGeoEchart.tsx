@@ -2,6 +2,7 @@
 import React, { useEffect, useRef } from 'react';
 import * as echarts from 'echarts';
 import brazilGeoJson from '@/json/brazil_geo.json';
+import { fetchHavanBranches } from '@/utils/fetch';
 
 interface HavanFilial {
   idFilial: string
@@ -77,9 +78,7 @@ const BrazilHavanMap = () => {
 
   useEffect(() => {
     const fetchFiliais = async () => {
-      const response = await fetch('https://apigatewaywebapi.havan.com.br/dadosmestre/api/Filial/BuscarFiliaisProximas?pagina=1&itensPorPagina=1000');
-      const data = await response.json();
-      const filiais = data.result.itens as HavanFilial[];
+      const filiais = await fetchHavanBranches();
 
       const newOption = {...mapOption}
       newOption.series[0].data = filiais.map((filial) => {

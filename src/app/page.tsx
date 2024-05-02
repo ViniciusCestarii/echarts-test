@@ -26,7 +26,10 @@ export default function Home() {
       <div className="underline w-full flex justify-end">
         <Link href="https://github.com/ViniciusCestarii/echarts-test">@viniciuscestarii</Link>
       </div>
-      <span>Obs: Estes dados são aproximações e, portanto, passíveis de imprecisão.</span>
+      <section className="flex flex-col gap-4 mb-4">
+      <span className="text-center">Nota 1: Estes dados são aproximações e, portanto, passíveis de imprecisão.</span>
+      <span className="max-w-[960px] text-center">Nota 2: A tela pode demorar para carregar ou parecer travada enquanto todos os gráficos estão sendo processados simultaneamente. Em um projeto real, seria recomendável carregar os gráficos no servidor ou usar estratégias como carregamento sob demanda à medida que os gráficos se tornam visíveis, entre outras soluções.</span>
+      </section>
       <AnimatedSantaCatarinaMapEchartUsingJson />
       <BrazilHavanMap />
       <GlobeHavanMap />
